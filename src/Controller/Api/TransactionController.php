@@ -56,7 +56,7 @@ class TransactionController extends AbstractController {
         $recipientId = $request->request->get('recipientId');
         $articleId = $request->request->get('articleId');
 
-        if (mb_strlen($comment) > 255) {
+        if ($comment != null && mb_strlen($comment) > 255) {
             throw new ParameterInvalidException('comment');
         }
 
